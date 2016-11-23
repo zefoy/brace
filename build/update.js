@@ -19,7 +19,7 @@ var workersrcdir  =  path.join(braceroot, 'workersrc');
 var workerdir     =  path.join(braceroot, 'worker');
 var buildroot     =  path.join(__dirname, 'ace-build');
 
-var aceTag = 'zefpatches';
+var aceTag = 'extra-modes';
 
 +function updateCleanAndPutInOrder() {
 
