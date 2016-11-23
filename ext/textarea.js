@@ -424,6 +424,8 @@ function setupSettingPanel(settingDiv, settingOpener, editor) {
             c_cpp:      "C/C++",
             coffee:     "CoffeeScript",
             json:       "json",
+            ljson:      "ljson",
+            locale:     "locale",
             perl:       "Perl",
             clojure:    "Clojure",
             ocaml:      "OCaml",

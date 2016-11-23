@@ -19,23 +19,18 @@ var workersrcdir  =  path.join(braceroot, 'workersrc');
 var workerdir     =  path.join(braceroot, 'worker');
 var buildroot     =  path.join(__dirname, 'ace-build');
 
-var aceTag = 'v1.2.3';
+var aceTag = 'zefpatches';
 
 +function updateCleanAndPutInOrder() {
 
   +function cloneFreshAndRemoveUnneeded() {
     rm('-rf', buildroot)
-    exec('git clone git://github.com/ajaxorg/ace-builds.git ' + buildroot);
+    exec('git clone git@github.com:zefoy/ace.git ' + buildroot);
     exec('(cd ' + buildroot + ' && git pull && git checkout ' + aceTag + ')');
+    exec('(cd ' + buildroot + ' && npm install && node ./Makefile.dryice.js -nc)');
 
-    [ 'demo', 'kitchen-sink', 'src-min-noconflict', 'src-min', 'src', 'textarea' ]
-      .forEach(function (dir) { rm('-rf', path.join(buildroot, dir)) })
-
-    rm(path.join(buildroot, '*'));
-
-    // move src-noconflict files to root after we cleaned it since that is all we need
-    mv(path.join(buildroot, 'src-noconflict/*'), buildroot)
-    rm('-rf', path.join(buildroot, 'src-noconflict'));
+    mv(path.join(buildroot, 'build/src-noconflict/*'), buildroot)
+    rm('-rf', path.join(buildroot, 'build/src-noconflict'));
   }()
 
 

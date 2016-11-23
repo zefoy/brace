@@ -1,18 +1,24 @@
 {
-  "name": "brace",
+  "name": "brace-extra",
   "version": "0.9.0",
-  "description": "browserify compatible version of the ace editor.",
+  "description": "Extra modes etc. for brace.",
   "main": "index.js",
   "typings": "index.d.ts",
+  "files": [
+    "mode/ljson.js",
+    "mode/locale.js",
+    "worker/ljson.js",
+    "worker/locale.js"
+  ],
   "scripts": {
     "update": "(cd build && node ./update && node ./update-ts)",
     "test": "browserify test/*.js > test/bundle.js --debug && opener test/index.html"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/thlorenz/brace.git"
+    "url": "git://github.com/zefoy/brace.git"
   },
-  "homepage": "https://github.com/thlorenz/brace",
+  "homepage": "https://github.com/zefoy/brace",
   "dependencies": {
     "w3c-blob": "0.0.1"
   },
@@ -32,11 +38,6 @@
     "inline",
     "browserify"
   ],
-  "author": {
-    "name": "Thorsten Lorenz",
-    "email": "thlorenz@gmx.de",
-    "url": "http://thlorenz.com"
-  },
   "license": "MIT",
   "engine": {
     "node": ">=0.6"
