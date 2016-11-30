@@ -18,3 +18,4 @@ For now this package provides the following modes:
 You only need to import the appropriate file for the wanted mode:
 
     import 'brace-extra/mode/ljson';
+    import 'brace-extra/mode/locale';
